@@ -1,0 +1,30 @@
+<!-- PLPapp/PLP/templates/PLP/stock_report.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Stock Report</title>
+  </head>
+  <body>
+    <h1>Stock Report</h1>
+    <h2>Total Purchases: {{ total_purchases }}</h2>
+    <h2>Total Sales: {{ total_sales }}</h2>
+    <h3>Purchases</h3>
+    <ul>
+      {% for purchase in purchases %}
+      <li>
+        {{ purchase.item_name }}: {{ purchase.quantity }} units at {{
+        purchase.purchase_price }} each on {{ purchase.purchase_date }}
+      </li>
+      {% endfor %}
+    </ul>
+    <h3>Sales</h3>
+    <ul>
+      {% for sale in sales %}
+      <li>
+        {{ sale.item_name }}: {{ sale.quantity }} units at {{ sale.sale_price }}
+        each on {{ sale.sale_date }}
+      </li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
